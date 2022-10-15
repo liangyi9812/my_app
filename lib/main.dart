@@ -5,7 +5,7 @@ import 'bottom/dynamic.dart';
 import 'bottom/message.dart';
 import 'bottom/mine.dart';
 
-void main() => {runApp(MyApp())};
+void main() => {runApp(const MyApp())};
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -76,84 +76,6 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
       )
-    );
-  }
-
-
-}
-
-
-
-class HelloWorld extends StatefulWidget {
-  const HelloWorld({Key? key}) : super(key: key);
-
-  @override
-  State<HelloWorld> createState() => _HelloWorldState();
-}
-
-class _HelloWorldState extends State<HelloWorld> {
-  final List _imageNames = [
-    {'image': 'images/avatar.jpg', 'text': '岛上码农'},
-    {'image': 'images/qrcode.jpg', 'text': '扫码关注'}
-  ];
-  int _index = 0;
-
-  void _onSwitch() {
-    setState(() {
-      _index = (++_index) % _imageNames.length;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("halo world")),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              width: 128,
-              height: 128,
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
-              child: Image.asset(_imageNames[_index]['image']),
-            ),
-            Text(_imageNames[_index]['text'])
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: "change",
-        onPressed: _onSwitch,
-        child: const Icon(Icons.swap_horizontal_circle_outlined),
-      ),
-    );
-  }
-}
-
-class CTest extends StatelessWidget {
-  const CTest({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 100,
-          height: 100,
-          padding: const EdgeInsets.all(50),
-          decoration: const BoxDecoration(color: Colors.blue),
-          child: Container(
-            height: double.maxFinite,
-            width: double.maxFinite,
-            decoration: const BoxDecoration(color: Colors.yellow)
-          ),
-        ),
-        Container(
-          width: 50,
-          height: 50,
-          decoration: const BoxDecoration(color: Colors.red),
-        ),
-      ],
     );
   }
 }
