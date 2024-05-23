@@ -1,6 +1,6 @@
 # my_app
 
-A new Flutter project.
+第一次写 Flutter 归档
 
 ## Getting Started
 
